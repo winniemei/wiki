@@ -1,0 +1,17 @@
+
+
+{{#each bars}}
+	<div class="singlebox">
+		<h3>
+		<a href="/bars/{{id}}" style="color: white;">{{title}}</a>
+			<div id="box" display: inline-block>
+				<img src="{{img_url}}" alt="" width="200" height="200">
+				{{article_text}} || {{time_edited}}
+			</div>
+		</h3>
+	</div>
+{{/each}}
+		<a href="/bars/new" style="color: white;">
+		Add a new bar
+		</a>
+	</div>

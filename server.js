@@ -28,3 +28,35 @@ app.use(methodOverride(function (req, res){
 app.get('/', function (req, res) {
 	res.render('home')
 });
+
+app.get('/bars', function (req, res) {
+  db.all('article', function (data) {
+    var bars = {
+      bars: data
+    }
+    res.render('barsIndex', bars);
+  });
+});
+
+
+app.get('/bars/new', function (req, res) {
+  res.render('barsNew');
+});
+
+
+app.get("/bars/:id", function (req, res) {
+  db.find('article', req.params.id, function (barsData) {
+    db.findRelations('article', 'author_id', req.params.id, function (authorData) {
+      var barObj = {
+        bars: barsData[0],
+        author: authorData
+      };
+      res.render('barsShow', barObj);
+    });
+  });
+});
+
+
+
+
+

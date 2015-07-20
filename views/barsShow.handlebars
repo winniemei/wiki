@@ -1,0 +1,45 @@
+<div class="single box" style="clear: left; text-align: center;">
+	<h3>
+		<a href="/bars/{{bars.id}}">
+			{{bars.title}}
+		</a>
+	</h3>
+	<a href="/bars/{{bars.id}}">
+		<img src="{{bars.img_url}}" alt="" width=200 height=200>
+	</a>	
+	<p>{{bars.time_edited}}</p>
+	<p>{{bars.article_text}}</p>
+	<p>{{author.author_name}}</p>
+	<p>{{author.location}}</p>
+	<p>{{author.email}}</p>
+<!-- 	<a href="/author/edit/{{bars.id}}" style="text-decoration: underline;">
+ -->		<strong>Edit bars</strong>
+	</a>
+</div>
+
+<!-- 	
+{{#each paintings}}
+		<div class="single box">
+			<p>{{year_made}}</p>
+			<a href="/paintings/{{id}}">
+				<img src="{{img_url}}" width="400" height="400">
+			</a>	
+		</div>
+{{/each}} -->
+<!-- 	
+CREATE TABLE article(
+  id SERIAL PRIMARY KEY, 
+  title VARCHAR(255),
+  time_edited VARCHAR(255),
+  img_url VARCHAR(255),
+  article_text TEXT,
+  author_id INTEGER references author,
+  category_id INTEGER references category
+);
+
+CREATE TABLE author(
+  id SERIAL PRIMARY KEY, 
+  author_name VARCHAR(255),
+  email VARCHAR(255),
+  location VARCHAR(255)
+); -->
