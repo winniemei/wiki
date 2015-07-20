@@ -19,7 +19,6 @@ h2 {
 .nav {
   text-align: center;
   width: 100%;
-  float: left;
 }
 .nav a, .nav a:visited {
   text-decoration: none;
@@ -32,4 +31,7 @@ h2 {
   top: 20%;
 }
 
-.submissionfield { width: 90px; height: 390px}
+.party {
+  position: absolute;
+  left: 47%;
+}

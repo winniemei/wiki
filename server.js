@@ -57,6 +57,10 @@ app.get("/bars/:id", function (req, res) {
 });
 
 
-
+// app.post("/artists", function (req, res) { 
+//  db.create('artists', req.body, function (data) {
+//   res.redirect('/artists');
+//  });
+// });
 
 
