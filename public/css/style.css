@@ -1,0 +1,26 @@
+body {
+  width: 100%;
+  height: 100%;
+  font-family: century;
+  color: white;
+  font-weight: 300;
+  background: url(http://i50.tinypic.com/wuqtfn.jpg) no-repeat;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.nav {
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  float: left;
+}
+.nav a, .nav a:visited {
+  text-decoration: none;
+  font-size: 60px;
+  color: white;
+  padding-left: 100px;
+}
