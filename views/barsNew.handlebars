@@ -1,38 +1,33 @@
 <form action="/bars/new" method="POST" style="clear: left; text-align: center;">
-	
-	<label for="title">Title<br>
-		<input type="text" name="title"><br>
-	</label><br>
+    
+    <label for="title">Title<br>
+        <input type="text" name="title"><br>
+    </label><br>
 
-	<label for="author_name">Author<br>
-		<input type="text" name="author_name"><br>
-	</label><br>
+    <select>
+        {{#each authors}}
+            <option type="text" name="author_id" value={{id}}>{{author_name}}</option>
+        {{/each}}
+    </select>
 
-	<label for="email">Email<br>
-		<input type="text" name="email"><br>
-	</label><br>
+    <select>
+        {{#each categories}}
+            <option type="text" name="category_id" value={{id}}>{{name}}</option>
+        {{/each}}
+    </select>
 
-	<label for="location">Location<br>
-		<input type="text" name="location"><br>
-	</label><br>
+    <label for="img_url">Photo URL<br>
+        <input type="text" name="img_url"><br>
+    </label><br>
 
-	<label for="category">Category<br>
-	<input type="text" name="name"><br>
-	</label><br>
+    <label for="time_edited">Date<br>
+        <input type="text" name="time_edited"><br>
+    </label><br>
 
-	<label for="img_url">Photo URL<br>
-		<input type="text" name="img_url"><br>
-	</label><br>
+    <label for="article_text">Please write your article<br>
+    <textarea class="text" name="article_text" style="text-align: left; width: 300px; height: 300px; overflow: auto;" ></textarea>
+    </label><br>
 
-	<label for="time_edited">Date<br>
-		<input type="text" name="time_edited"><br>
-	</label><br>
-
-	<label for="article_text">Please write your article<br>
-	<textarea class="text" name="article_text" style="text-align: left; width: 300px; height: 300px; overflow: auto;" ></textarea>
-	</label><br>
-
-	<input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 
 </form>
-

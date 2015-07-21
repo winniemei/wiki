@@ -1,5 +1,6 @@
 var pg = require('pg');
-var dbUrl = 'pg://localhost/wiki_db'
+// var dbUrl = 'pg://localhost/wiki_db'
+var dbUrl = process.env.DATABASE_URL
 
 module.exports = {
   end: function() {
@@ -122,5 +123,16 @@ module.exports = {
       });
     });
     this.end();
-}
+},
+ query: function (string, cb ) {
+    pg.connect(dbUrl, function (err, client, done) {
+      console.log(string)
+      client.query(string, function (err, result) {
+        done();
+        console.log(result)
+        cb(result.rows)
+      });
+    });
+   this.end();
+  }
 }
