@@ -1,7 +1,7 @@
 
 
 {{#each bars}}
-	<div class="singlebox">
+	<div class="singlebox" style ="text-align: center; float: left; width: 200px; padding: 5px; margin: 0 auto;">
 		<h3>
 		<a href="/bars/{{id}}" style="color: white;">{{title}}</a>
 			<div id="box" display: inline-block>
@@ -10,7 +10,13 @@
 		</h3>
 	</div>
 {{/each}}
-		<a href="/bars/new" style="color: white;">
-		Add a new bar
-		</a>
+	</div>
+
+
+	<div style="text-align: center; position: absolute; bottom: 30%; background-color: black; border-radius: 25px">
+		<h1>
+			<a href="/bars/new" style="color: white;">
+			Add a new bar
+			</a>
+		</h1>
 	</div>

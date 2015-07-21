@@ -1,0 +1,54 @@
+<form action="/bars/{{id}}" method="POST" style="clear: left; text-align: center;">
+	
+
+	<input type="hidden" name="_method" value="PUT">
+  		<label for="title">Title<br>
+    <input type="text" name="title" value="{{bars.title}}"><br>
+ 		 </label><br>
+
+  		<label for="author_name">Author<br>
+    <input type="text" name="author_name"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+  		<label for="email">Email<br>
+    <input type="text" name="email"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+  		<label for="location">Location<br>
+    <input type="text" name="location"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+  		<label for="category">Category<br>
+    <input type="text" name="category"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+  		<label for="img_url">Photo URL<br>
+    <input type="text" name="img_url"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+  		<label for="time_edited">Date<br>
+    <input type="text" name="time_edited"><br>
+ 		 </label><br>
+
+ 	<input type="hidden" name="_method" value="PUT">
+	<label for="article_text">Please write your article<br>
+	<textarea class="text" name="article_text" style="text-align: left; width: 300px; height: 300px; overflow: auto;" value="{{bars.article_text}}" ></textarea>
+	</label><br>
+
+	<input type="submit" value="Submit">
+
+</form>
+
+
+<form action="/bars/{{id}}" method="POST" style="clear: left; text-align: center;">
+	
+	<input type="hidden" name="_method" value="DELETE">
+
+	<button>Delete</button>
+
+</form>

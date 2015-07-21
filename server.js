@@ -44,9 +44,9 @@ app.get('/bars/new', function (req, res) {
 });
 
 
-app.get("/bars/:id", function (req, res) {
-  db.find('article', req.params.id, function (barsData) {
-    db.findRelations('article', 'author_id', req.params.id, function (authorData) {
+app.get('/bars/:id', function (req, res) {
+  db.find('author', req.params.id, function (authorData) {
+    db.findRelations('article', 'author_id', req.params.id, function (barsData) {
       var barObj = {
         bars: barsData[0],
         author: authorData
@@ -56,11 +56,69 @@ app.get("/bars/:id", function (req, res) {
   });
 });
 
+// app.get("/bars/:id", function (req, res) {
+//   db.bothTablesWithArticleAuthorId('article', 'author', 'author_id', 'id', req.params.id, function(data){
+//       console.log('data' + data);
+//       console.log(data[0]);
+//       var barObj = {
+//         bars: data[0]
+//       };
+//       res.render('barsShow', barObj);
+//     });
+//   });
 
-// app.post("/artists", function (req, res) { 
-//  db.create('artists', req.body, function (data) {
-//   res.redirect('/artists');
-//  });
-// });
+
+
+//CREATE NEW BAR
+
+app.post("/bars/new", function (req, res) {
+	var newObj = {
+		title : req.body.title,
+		time_edited : req.body.time_edited,
+		img_url : req.body.img_url,
+		article_text : req.body.article_text,
+		author_id : req.body.author_id,
+		category_id : req.body.category_id
+	}
+ db.create('article', newObj, function (data) {
+ 	console.log(data)
+  res.redirect('/bars');
+ });
+});
+
+//EDIT BAR
+
+app.get('/bars/edit/:id', function (req, res) {
+  db.find('article', req.params.id, function (barsData) {
+  	console.log(barsData);
+    var data = {
+      bars: barsData[0]
+    }
+    res.render('barsEdit', data);
+  });
+});
+
+app.put("/bars/:id", function (req, res) {
+		var editedObj = {
+		title : req.body.title,
+		time_edited : req.body.time_edited,
+		img_url : req.body.img_url,
+		article_text : req.body.article_text,
+		author_id : req.body.author_id,
+		category_id : req.body.category_id
+	}
+ db.update('article', editedObj, req.params.id, function (data) {
+   res.redirect('/bars/' + req.params.id);
+ });
+});
+
+//DELETE BAR
+
+app.delete("/bars/:id", function (req, res) {
+ db.delete('article', req.params.id, function (data) {
+  res.redirect('/bars');
+ });
+});
+
 
 

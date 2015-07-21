@@ -1,4 +1,4 @@
-<div class="single box" style="clear: left; text-align: center;">
+<div class="single box" style="clear: left; text-align: center; background-color:black; opacity: 0.7; padding:0px; margin:0px">
 	<h3>
 		<a href="/bars/{{bars.id}}" style="color: white">
 			{{bars.title}}
@@ -7,15 +7,15 @@
 	<a href="/bars/{{bars.id}}">
 		<img src="{{bars.img_url}}" alt="" width=200 height=200>
 	</a>	
-	<div background-color= "black">
+
 		<p>{{bars.time_edited}}</p>
 		<p>{{bars.article_text}}</p>
-		<p>{{author.author_name}}</p>
-		<p>{{author.location}}</p>
-		<p>{{author.email}}</p>
-	</div>
-<!-- 	<a href="/author/edit/{{bars.id}}" style="text-decoration: underline;">
- -->		<strong>Edit bars</strong>
+	<!-- 	<p>{{author.author_name}}</p> -->
+<!-- 		<p>{{author.location}}</p>
+		<p>{{author.email}}</p> 
+ -->
+	<a href="/bars/edit/{{bars.id}}" style="text-decoration: underline; color: white">
+		<strong>Edit bars</strong>
 	</a>
 </div>
 

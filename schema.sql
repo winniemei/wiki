@@ -24,3 +24,4 @@ CREATE TABLE article(
   author_id INTEGER references author,
   category_id INTEGER references category
 );
+

@@ -66,7 +66,7 @@ module.exports = {
         if (err) {
           console.error('error running query', err);
         }
-        cb(result)
+        cb(result);
       })
     })
     this.end();
@@ -76,10 +76,10 @@ module.exports = {
       client.query("DELETE FROM " + table + " WHERE id=" + id, function (err, result) {
         done();
         if(err){
-          console.error("Could't make delete request", err)
+          console.error("Couldn't make delete request", err)
         }
-        cb(result)
-      })
+        cb(result);
+      });
     });
     this.end();
   },
@@ -94,5 +94,33 @@ module.exports = {
       });
     });
     this.end();
-  }
-};
+  },
+  bothTablesWithAuthorId: function (table1, table2, column1, column2, id, cb) {
+    pg.connect(dbUrl, function (err, client, done) {
+      client.query('SELECT * FROM ' + table1 + ' LEFT JOIN ' + table2 + ' ON ' + table1 + '.' + column1 + ' = ' + table2 + '.' + column2 + ' WHERE ' + table2 + 
+        '.' + column2 + '=' + id, function (err, result) {
+        done();
+        if(err){
+          console.error("Stupid relationships", err)
+        }
+        cb(result.rows);
+      });
+    });
+    this.end();
+  },
+  bothTablesWithArticleAuthorId: function (table1, table2, column1, column2, id, cb) {
+    pg.connect(dbUrl, function (err, client, done) {
+      client.query('SELECT * FROM ' + table1 + ' LEFT JOIN ' + table2 + ' ON ' + table1 + '.' + column1 + ' = ' + table2 + '.' + column2 + ' WHERE ' + table1 + 
+        '.' + 'id' + '=' + id, function (err, result) {
+        console.log(result);
+        console.log(result.rows);
+        done();
+        if(err){
+          console.error("Stupid relationships", err)
+        }
+        cb(result.rows);
+      });
+    });
+    this.end();
+}
+}

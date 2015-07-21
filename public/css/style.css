@@ -21,6 +21,7 @@ h2 {
   width: 100%;
 }
 .nav a, .nav a:visited {
+  text-align: center;
   text-decoration: none;
   font-size: 60px;
   color: white;
