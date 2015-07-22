@@ -1,6 +1,4 @@
 
-
-
 INSERT INTO CATEGORY (name) VALUES ('Bars');
 INSERT INTO CATEGORY (name) VALUES ('Clubs');
 

@@ -7,11 +7,11 @@ var logger = require('morgan');
 var path = require('path');
 var db = require('./db.js');
 
-// app.listen(3000);
-app.set('port', (process.env.PORT || 3000));
-app.listen(app.get('port', function(){
-  console.log("App running on port : ", app.get('port'))
-})
+app.listen(3000);
+// app.set('port', (process.env.PORT || 3000));
+// app.listen(app.get('port', function(){
+//   console.log("App running on port : ", app.get('port'))
+// })
 
 app.engine('handlebars', exphbs({defaultLayout: 'main', extname: 'handlebars'}));
 app.set('views', path.join(__dirname, 'views'));
@@ -86,6 +86,7 @@ app.get('/bars/edit/:id', function (req, res) {
   db.find('article', req.params.id, function (barsData) {
       console.log(barsData);
     var data = {
+      id: req.params.id,
       bars: barsData[0]
     }
     res.render('barsEdit', data);

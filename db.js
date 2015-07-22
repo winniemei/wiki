@@ -1,6 +1,6 @@
 var pg = require('pg');
-// var dbUrl = 'pg://localhost/wiki_db'
-var dbUrl = process.env.DATABASE_URL
+var dbUrl = 'pg://localhost/wiki_db'
+// var dbUrl = process.env.DATABASE_URL
 
 module.exports = {
   end: function() {
