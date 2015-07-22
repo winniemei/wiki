@@ -6,24 +6,29 @@
     <input type="text" name="title" value="{{bars.title}}"><br>
  		 </label><br>
 
-  		<label for="author_name">Author<br>
-    <input type="text" name="author_name"><br>
- 		 </label><br>
+    <select>
+        {{#each authors}}
+            <option type="text" name="author_id" value={{id}}>{{author_name}}</option>
+        {{/each}}
+    </select><br>
 
- 	<input type="hidden" name="_method" value="PUT">
-  		<label for="email">Email<br>
-    <input type="text" name="email"><br>
- 		 </label><br>
+    <select>
+        {{#each authors}}
+            <option type="text" name="author_id" value={{id}}>{{email}}</option>
+        {{/each}}
+    </select><br>
 
- 	<input type="hidden" name="_method" value="PUT">
-  		<label for="location">Location<br>
-    <input type="text" name="location"><br>
- 		 </label><br>
+    <select>
+        {{#each authors}}
+            <option type="text" name="author_id" value={{id}}>{{location}}</option>
+        {{/each}}
+    </select><br>
 
- 	<input type="hidden" name="_method" value="PUT">
-  		<label for="category">Category<br>
-    <input type="text" name="category"><br>
- 		 </label><br>
+    <select>
+        {{#each categories}}
+            <option type="text" name="category_id" value={{id}}>{{name}}</option>
+        {{/each}}
+    </select><br>
 
  	<input type="hidden" name="_method" value="PUT">
   		<label for="img_url">Photo URL<br>

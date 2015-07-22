@@ -84,14 +84,19 @@ app.post("/bars/new", function (req, res) {
 
 app.get('/bars/edit/:id', function (req, res) {
   db.find('article', req.params.id, function (barsData) {
-      console.log(barsData);
+    db.all('author', function (authorsData) {
+       db.all('category', function (categoriesData) {
     var data = {
       id: req.params.id,
-      bars: barsData[0]
+      bars: barsData[0],
+      authors: authorsData,
+      categories: categoriesData
     }
     res.render('barsEdit', data);
+        });
+      });
+    });
   });
-});
 
 app.put("/bars/:id", function (req, res) {
         var editedObj = {

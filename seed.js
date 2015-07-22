@@ -1,7 +1,7 @@
 var db = require('./db.js');
 
 
-var author = ['Winnie Mei', 'Ruby Pradhan']
+var author = ['Winnie Mei', 'Taylor Swift']
 var titles = ['Raines Law Room', 'Angels Share']
 
 var image = [
@@ -9,13 +9,13 @@ var image = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyG2LmXgijkT5PSvfdhnbmFWkP_CSNC7i57Z7hG9trqSSFpe1DrA'
 ]
 
-var articletext = ['Raines Law Rooms strawberry kiss drink is amazing.', 'Angels Share is amazing.']
+var articletext = ['It is hard to find, it is a little black door that you ring the doorbell and a man answers the door and lets you in. Upon entering it looks like a very dimly lit library with velvet couches and leather chairs. If you proceed to the back where the bar is it is a little kitchen where the bartenders work right in front of you. The drinks are AMAZING! I dont really like gin, but they dont serve vodka. I got an aviation (egg whites, gin, lemon), bees knees (gin, honey, lemon) and a gordons cup (gin, cucumber juice, salt and pepper) - sounds gross, but they were fantastic. Bees knees were my favorite. It is a great place to bring a date, before dinner and get a couple of cocktail', 'My favorite bar in New York City by far. They make very yummy sophisticated drinks. The ambiance is very unique and pleasant. My white truffle drink was FANTASTIC.']
 
-var time = ['Whatever', 'Whatever']
+var time = ['7.21.2015', '7.21.2015']
 
 var categories = ['Bars', 'Clubs']
-var emails = ['winniemei@gmail.com', 'ruby@gmail.com']
-var locations = ['Manhattan', 'Manhattan']
+var emails = ['winniemei@gmail.com', 'taylorswift@gmail.com']
+var locations = ['Manhattan', 'Brooklyn']
 
 
 var rainesCategory = {
